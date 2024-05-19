@@ -1,0 +1,25 @@
+.content {
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.about {
+  max-width: 32.5rem;
+}
+
+.about, .column, .tecs, .langs {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+
+  flex: 1;
+}
+
+.about__description {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.column {
+  max-width: 30rem;
+}
