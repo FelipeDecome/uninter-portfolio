@@ -1,0 +1,100 @@
+.contact {
+  display: flex;
+  width: 100%;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 100%;
+}
+
+form .fields {
+  display: grid;
+  column-gap: 4rem;
+  row-gap: 1rem;
+  grid-auto-flow: column;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+}
+
+form fieldset {
+  border: none;
+}
+
+.form-group {
+  --input-padding-block: 0.75rem;
+  --input-padding-inline: 1rem;
+  position: relative;
+}
+
+.form-group label {
+  position: absolute;
+  top: var(--input-padding-block);
+  left: var(--input-padding-inline);
+  background-color: var(--color-purple-50);
+  transition: color 0.2s, transform 0.2s;
+}
+
+.form-group input, .form-group textarea {
+  padding-inline: var(--input-padding-inline);
+  padding-block: var(--input-padding-block);
+
+  border: 1px solid var(--color-gray-300);
+  border-radius: 0.25rem;
+  width: 100%;
+  background-color: var(--color-purple-50);
+  transition: outline-color 0.2s, border-color 0.2s;
+}
+
+.form-group textarea {
+  height: 100%;
+}
+
+.form-group input::placeholder, .form-group textarea::placeholder {
+  font-family: "Poppins", sans-serif;
+  color: var(--color-gray-500);
+  font-weight: 200;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.form-group input:hover, .form-group textarea:hover {
+  border-color: var(--color-purple-400);
+}
+
+.form-group input:focus-visible, .form-group textarea:focus-visible {
+  outline-color: var(--color-purple-500);
+}
+
+.form-group.row-span-3 {
+  grid-row: span 3;
+}
+
+.form-group:focus-within input::placeholder,
+.form-group:focus-within textarea::placeholder {
+  opacity: 1;
+}
+
+.form-group:focus-within label {
+  color: var(--color-purple-500);
+  font-weight: 400;
+  transform: translateY(calc(-1 * var(--input-padding-block) - 0.75em));
+}
+
+form button {
+  padding-inline: 1.5rem;
+  padding-block: 0.5rem;
+
+  border: none;
+  border-radius: 0.25rem;
+  background-color: var(--color-purple-500);
+  color: var(--color-white);
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  width: max-content;
+}
